@@ -91,7 +91,7 @@ def download_file(item_id: str, file_name: str, destination: Path) -> Optional[P
 def get_file_list() -> list[str]:
     url = f'https://archive.org/download/{ARCHIVE_IDENTIFIER}/{ARCHIVE_IDENTIFIER}_files.xml'
     try:
-        with httpx.Client(verify=False, timeout=15) as client:
+        with httpx.Client(verify=False, timeout=15, follow_redirects=True) as client:
             response = client.get(url)
             response.raise_for_status()
     except httpx.HTTPError as e:
