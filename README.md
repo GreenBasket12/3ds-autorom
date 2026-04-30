@@ -1,41 +1,43 @@
+# 3DS Archive Downloader
 
-3DS Auto CIA Downloader
+A terminal UI for browsing, downloading, and installing 3DS CIA/NDS ROMs from the [3dscia_202310](https://archive.org/details/3dscia_202310) archive. Files are automatically extracted and optionally moved to a connected USB/SD card.
 
-Linux Support is out
+## Features
 
-This Python script will run and download from an archive.org directory to auto move to an sd card for our convenience. 
+- Browse the full archive with an interactive terminal UI
+- Live download progress — speed, ETA, and transfer size
+- Auto-extracts `.rar` and `.zip` archives
+- Moves `.cia` and `.nds` files to the correct folders on a connected USB device
+- Works on **Windows and Linux**
 
-This is the archive.org repository:
-https://archive.org/details/3dscia_202310
+## Requirements
 
+- Python 3.10+
+
+## Setup
+
+```bash
+git clone https://github.com/Green-Basket12/3ds-autorom
+cd 3ds-autorom
+pip install -r requirements.txt
+```
+
+## Usage
+
+```bash
+python archive.py
+```
+
+| Key | Action |
+|-----|--------|
+| `↑` / `k` | Move up |
+| `↓` / `j` | Move down |
+| `Page Up/Down` | Scroll a page |
+| `Enter` | Download selected file |
+| `q` | Quit |
+
+After a download completes, you'll be prompted to select a connected USB/SD device. `.cia` files go to `cia/` and `.nds` files go to `nds/` on the device. If no device is found, files are saved to `output/`.
 
 ## Authors
 
-ChatGPT (did code corrections)
-
-Green_Basket12
-
-## Installation
-
-TO BE MADE
-
-Requirements:
-Pyhton 3.8
-
-to run the script sucsessfully cd into cloned folder and run:
- pip install -r requirements.txt    
-
-
-Note: This only works on Windows for now, but i am working on making it compatible with Linux soon (gimme like a month)
-
-then run 
-python archive.py
-## Support
-
-Comment and issues with the actual script to Github
-
-The archive.org directory is limited however, you can request roms in the comments of the directory (don't overflow the comments with request make sure that someone requested that rom and wait i don't live in the US and archive.org upload speeds are limited outside of the US)
-
-Join the Discord and drop a dm if you need help or come to say hi:
-
-https://discord.gg/6Q7p7b7N6M
+- [Green_Basket12](https://github.com/Green-Basket12)
